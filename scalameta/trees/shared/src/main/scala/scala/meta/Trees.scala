@@ -324,6 +324,13 @@ object Member {
   }
 }
 
+
+@branch trait Clause extends Tree
+object Clause {
+  @ast class TermClause(params: List[Term.Param]) extends Clause
+  @ast class TypeClause(params: List[Type.Param]) extends Clause
+}
+
 @branch trait Decl extends Stat
 object Decl {
   @ast class Val(mods: List[Mod], pats: List[Pat] @nonEmpty, decltpe: scala.meta.Type)
